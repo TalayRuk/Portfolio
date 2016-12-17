@@ -1,4 +1,4 @@
-# Portfolio
+# Vichitra Portfolio
 wk4 Friday Independent Project using ASP.Net Core API
 
 ## Personal site requires the following minimum pages:
