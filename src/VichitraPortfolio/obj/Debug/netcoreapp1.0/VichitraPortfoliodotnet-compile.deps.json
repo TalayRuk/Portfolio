@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0/",
-    "signature": "a2dcb6aa0dd99ee1dd9c81ce705c0616f47e9b95"
+    "signature": "48c06093a8b0237fbc9ad7f1e137562450931eef"
   },
   "compilationOptions": {
     "defines": [
@@ -21,7 +21,6 @@
           "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
           "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
           "Microsoft.Extensions.Logging.Console": "1.0.0",
-          "Microsoft.AspNetCore.Mvc": "1.0.1",
           "Microsoft.AspNetCore.StaticFiles": "1.0.0",
           "Microsoft.EntityFrameworkCore": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
@@ -30,7 +29,8 @@
           "RestSharp.NetCore": "105.2.3",
           "Newtonsoft.Json": "9.0.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
-          "Microsoft.AspNetCore.Http.Abstractions": "1.1.0"
+          "Microsoft.AspNetCore.Http.Abstractions": "1.1.0",
+          "Microsoft.AspNetCore.Mvc": "1.0.1"
         },
         "compile": {
           "VichitraPortfolio.dll": {}
@@ -1286,7 +1286,7 @@
           "System.Reflection": "4.3.0",
           "System.Reflection.Emit": "4.3.0",
           "System.Runtime.InteropServices": "4.3.0",
-          "System.Runtime.Serialization.Formatters": "4.3.0-preview1-24530-04",
+          "System.Runtime.Serialization.Formatters": "4.0.0-rc4-24217-03",
           "System.Runtime.Serialization.Primitives": "4.1.1",
           "System.Runtime.Serialization.Xml": "4.1.1",
           "System.Xml.XmlSerializer": "4.0.11"
@@ -2402,7 +2402,7 @@
           "ref/netstandard1.1/System.Runtime.Numerics.dll": {}
         }
       },
-      "System.Runtime.Serialization.Formatters/4.3.0-preview1-24530-04": {
+      "System.Runtime.Serialization.Formatters/4.0.0-rc4-24217-03": {
         "dependencies": {
           "System.Collections": "4.3.0",
           "System.Reflection": "4.3.0",
@@ -2889,7 +2889,6 @@
           "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
           "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
           "Microsoft.Extensions.Logging.Console": "1.0.0",
-          "Microsoft.AspNetCore.Mvc": "1.0.1",
           "Microsoft.AspNetCore.StaticFiles": "1.0.0",
           "Microsoft.EntityFrameworkCore": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
@@ -2898,7 +2897,8 @@
           "RestSharp.NetCore": "105.2.3",
           "Newtonsoft.Json": "9.0.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
-          "Microsoft.AspNetCore.Http.Abstractions": "1.1.0"
+          "Microsoft.AspNetCore.Http.Abstractions": "1.1.0",
+          "Microsoft.AspNetCore.Mvc": "1.0.1"
         },
         "runtime": {
           "VichitraPortfolio.dll": {}
@@ -4151,7 +4151,7 @@
           "System.Reflection": "4.3.0",
           "System.Reflection.Emit": "4.3.0",
           "System.Runtime.InteropServices": "4.3.0",
-          "System.Runtime.Serialization.Formatters": "4.3.0-preview1-24530-04",
+          "System.Runtime.Serialization.Formatters": "4.0.0-rc4-24217-03",
           "System.Runtime.Serialization.Primitives": "4.1.1",
           "System.Runtime.Serialization.Xml": "4.1.1",
           "System.Xml.XmlSerializer": "4.0.11"
@@ -5186,7 +5186,7 @@
           "lib/netstandard1.3/System.Runtime.Numerics.dll": {}
         }
       },
-      "System.Runtime.Serialization.Formatters/4.3.0-preview1-24530-04": {
+      "System.Runtime.Serialization.Formatters/4.0.0-rc4-24217-03": {
         "dependencies": {
           "System.Collections": "4.3.0",
           "System.Reflection": "4.3.0",
@@ -6595,10 +6595,10 @@
       "serviceable": true,
       "sha512": "sha512-yMH+MfdzHjy17l2KESnPiF2dwq7T+xLnSJar7slyimAkUh/gTrS9/UQOtv7xarskJ2/XDSNvfLGOBQPjL7PaHQ=="
     },
-    "System.Runtime.Serialization.Formatters/4.3.0-preview1-24530-04": {
+    "System.Runtime.Serialization.Formatters/4.0.0-rc4-24217-03": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qFoIqgI8GlsgPvamhPuEA1cIjCLWadwBTo6kmdgFmQHwI1B0BTgXdp85Bz2cwwpizPnsKNqBWAJxbkj9v2t3Sw=="
+      "sha512": "sha512-uNECV/41Tp0+GOz1mvPCcZi7IV0qbZP0BBxL4CJ6yOI5NtW28YczgqarQvZ/JRQzlSz0SvB9ZcvWC9fMsMOpIg=="
     },
     "System.Runtime.Serialization.Primitives/4.1.1": {
       "type": "package",
