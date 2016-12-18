@@ -24,7 +24,7 @@ namespace VichitraPortfolio
         
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddMvc();
+            services.AddMvc();
             //services.AddEntityFramework()
             //    .AddDbContext<TexterDbContext>(options =>
             //    options.UseSqlServer(Congiguration["ConnectionStrings:DefaultConnection"]));
@@ -39,17 +39,17 @@ namespace VichitraPortfolio
             {
                 app.UseDeveloperExceptionPage();
             }
-            //app.UseStaticFiles();
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Oops! Error Error!");
-            //});
+            app.UseStaticFiles();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("Oops! Error Error!");
+            });
         }
     }
 }
