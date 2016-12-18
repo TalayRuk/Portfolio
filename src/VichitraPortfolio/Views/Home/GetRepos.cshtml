@@ -1,0 +1,27 @@
+﻿@model IEnumerable<VichitraPortfolio.Models.Repo>
+
+<h2>Projects with Stars</h2>
+<hr />
+<ol>
+    @foreach (var repo in Model)
+    {
+        <li class="jumbotron">
+            @*show only 3 repos*@
+           
+            <h2>Project name: @Html.DisplayFor(modelItem => repo.Full_name)</h2>
+            <h3 class="glyphicon glyphicon-star">Stargazers count: @Html.DisplayFor(modelItem => repo.Stargazers_count)</h3>
+            <h4>Project Url: <a href="#"> @Html.DisplayFor(modelItem => repo.Html_url </a>
+            <br />
+            Description: @Html.DisplayFor(modelItem => repo.Description)
+            <br />
+            Language: @Html.DisplayFor(modelItem => repo.Language)</h4>
+            
+        </li>
+    }
+</ol>
+
+@Html.ActionLink("Back home", "Index")
+
+
+
+

@@ -11,7 +11,7 @@ namespace VichitraPortfolio.Models
 {
     public class Repo 
     {
-        public string Name { get; set; }
+        public string Full_name { get; set; }
         public string Stargazers_count { get; set; }
         public string Html_url { get; set; }
         public string Description { get; set; }
@@ -44,13 +44,13 @@ namespace VichitraPortfolio.Models
             //Console.WriteLine()) to process the request The response has content property
             //Trn the array stored as response.Content coverts the Json-formatted string response.Content into JObject (JObject comes from using NewtonSoft.Json.Linq library & is a .NET obj we can treat as JSON)
             //JSON key is "items" we can pull this array out as a JSON object by deserializing it. DeserializeObject went into the data for each repo and found those keys to create item objects for us
-            //for this to work the property name has to match the JSON key. This means that the Name property for our Repo class needs to be named "Name"
+            //for this to work the property Full_name has to match the JSON key. This means that the Full_name property for our Repo class needs to be named "Full_name"
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
             var repoList = JsonConvert.DeserializeObject<List<Repo>>(jsonResponse["items"].ToString());
             return repoList;
             //foreach (var repo in repoList)
             //{
-            //    Console.WriteLine("Name: {0}", repo.Name);
+            //    Console.WriteLine("Full_name: {0}", repo.Full_name);
             //    Console.WriteLine("Stargazers_count: {0}", repo.Stargazers_count);
             //    Console.WriteLine("Html_url: {0}", repo.Html_url);
             //    Console.WriteLine("Description: {0}", repo.Description);
@@ -60,12 +60,12 @@ namespace VichitraPortfolio.Models
             //Console.WriteLine(jsonResponse["items"]); **B/c items is the key where the data is stored, can't change it to somethingelse
             //Console.ReadLine();
         }
-        //GetRepos should show all the repositories, don't need another showrepositories!
+        //GetRepos should show all the repositories, don't need another showrepositories unlike sending message we have to have another form to send the message but since we will not be sending these repos anywhere !
         //public void ShowRespositories()
         //{
         //    var client = new RestClient("https://api.github.com/search/repositories?page=1&q=user:talayruk&sort=stars:>0&order=desc");
         //    var request = new RestRequest("", Method.POST);
-        //    request.AddParameter("Name", Name);
+        //    request.AddParameter("Full_name", Full_name);
         //    request.AddParameter("Stargazers_count", Stargazers_count);
         //    request.AddParameter("Html_url", Html_url);
         //    request.AddParameter("Description", Description);
