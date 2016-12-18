@@ -60,20 +60,21 @@ namespace VichitraPortfolio.Models
             //Console.WriteLine(jsonResponse["items"]); **B/c items is the key where the data is stored, can't change it to somethingelse
             //Console.ReadLine();
         }
-        public void ShowRespositories()
-        {
-            var client = new RestClient("https://api.github.com/search/repositories?page=1&q=user:talayruk&sort=stars:>0&order=desc");
-            var request = new RestRequest("", Method.POST);
-            request.AddParameter("Name", Name);
-            request.AddParameter("Stargazers_count", Stargazers_count);
-            request.AddParameter("Html_url", Html_url);
-            request.AddParameter("Description", Description);
-            request.AddParameter("Language", Language);
-            client.Authenticator = new HttpBasicAuthenticator("", "81fb8907e791f232977c6c3ba867e1d1cd8b2c09");
-            client.ExecuteAsync(request, response => {
-                Console.WriteLine(response.Content);
-            });
-        }
+        //GetRepos should show all the repositories, don't need another showrepositories!
+        //public void ShowRespositories()
+        //{
+        //    var client = new RestClient("https://api.github.com/search/repositories?page=1&q=user:talayruk&sort=stars:>0&order=desc");
+        //    var request = new RestRequest("", Method.POST);
+        //    request.AddParameter("Name", Name);
+        //    request.AddParameter("Stargazers_count", Stargazers_count);
+        //    request.AddParameter("Html_url", Html_url);
+        //    request.AddParameter("Description", Description);
+        //    request.AddParameter("Language", Language);
+        //    client.Authenticator = new HttpBasicAuthenticator("", "81fb8907e791f232977c6c3ba867e1d1cd8b2c09");
+        //    client.ExecuteAsync(request, response => {
+        //        Console.WriteLine(response.Content);
+        //    });
+        //}
         //1)
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
         {
