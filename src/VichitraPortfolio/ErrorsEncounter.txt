@@ -8,3 +8,6 @@ Error:
    at VichitraPortfolio.HomeController.cs.HomeController.GetRepos() in C:\Users\epicodus\Desktop\VichitraPortfolio\src\VichitraPortfolio\Controllers\HomeController.cs:line 22
    at lambda_method(Closure , Object , Object[] )
    at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionFilterAsync>d__28.MoveNext()}
+
+
+   ***Check to add migrations & c if it'll works!
