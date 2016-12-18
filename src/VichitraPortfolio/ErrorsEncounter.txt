@@ -1,7 +1,22 @@
 ﻿Error: object reference not set instance of object
 Solve: Close Vs & reopened and error's gone 
 
+Token: 81fb8907e791f232977c6c3ba867e1d1cd8b2c09
 
+Client ID
+2d2756c3dd0a7e9a23c7
+Client Secret
+aa0091094cf01ddc2acebef180d37ef928bbe616
+"id": 19232053,
+GET /repositories/:repository_id/stargazers
+
+In order to access the API with your Integration, you must provide a custom media type in the Accept Header for your requests.
+******application/vnd.github.v3+json
+To access Integrations, you must first sign the pre-release agreement.
+If you'd like to get started, check out our developer documentation.
+******application/vnd.github.machine-man-preview+json
+
+GET /repos/:owner/:repo/stargazers
 
 Api call
 
