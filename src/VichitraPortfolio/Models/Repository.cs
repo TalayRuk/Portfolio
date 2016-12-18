@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
+using RestSharp.Authenticators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,10 +16,8 @@ namespace VichitraPortfolio.Models
         public string Html_url { get; set; }
         public string Description { get; set; }
         public string Language { get; set; }
-    }
-    public class Program
-    {
-        public static void Main(string[] args)
+
+        public static List<Repository> GetRepositories()
         {
             //Make a connection with the server where the API is located 
             var client = new RestClient("https://api.github.com/search/repositories?page=1&q=user:talayruk&sort=stars:>0&order=desc");
@@ -27,7 +29,6 @@ namespace VichitraPortfolio.Models
             request.AddHeader("User-Agent", "talayruk");
             //To get metadata in search results, specify the text-match media type in Accept header
             request.AddHeader("Accept", "application/vnd.github.v3.text-match+json");
-
             //Give the  client appropriate credentials & add /Itmes.json to the account string to get the response in JSON format **"items" is Json keys & its value is an array of JSON-formatted data about repositories
             client.Authenticator = new HttpBasicAuthenticator("/Itmes.json", "81fb8907e791f232977c6c3ba867e1d1cd8b2c09");
             //We initialize a new RestResponse variable named response
@@ -46,17 +47,32 @@ namespace VichitraPortfolio.Models
             //for this to work the property name has to match the JSON key. This means that the Name property for our Repository class needs to be named "Name"
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
             var repositoryList = JsonConvert.DeserializeObject<List<Repository>>(jsonResponse["items"].ToString());
-            foreach (var repository in repositoryList)
-            {
-                Console.WriteLine("Name: {0}", repository.Name);
-                Console.WriteLine("Stargazers_count: {0}", repository.Stargazers_count);
-                Console.WriteLine("Html_url: {0}", repository.Html_url);
-                Console.WriteLine("Description: {0}", repository.Description);
-                Console.WriteLine("Language: {0}", repository.Language);
-            }
+            return repositoryList;
+            //foreach (var repository in repositoryList)
+            //{
+            //    Console.WriteLine("Name: {0}", repository.Name);
+            //    Console.WriteLine("Stargazers_count: {0}", repository.Stargazers_count);
+            //    Console.WriteLine("Html_url: {0}", repository.Html_url);
+            //    Console.WriteLine("Description: {0}", repository.Description);
+            //    Console.WriteLine("Language: {0}", repository.Language);
+            //}
 
             //Console.WriteLine(jsonResponse["items"]); **B/c items is the key where the data is stored, can't change it to somethingelse
-            Console.ReadLine();
+            //Console.ReadLine();
+        }
+        public void Send()
+        {
+            var client = new RestClient("https://api.github.com/search/repositories?page=1&q=user:talayruk&sort=stars:>0&order=desc");
+            var request = new RestRequest("", Method.POST);
+            request.AddParameter("Name", Name);
+            request.AddParameter("Stargazers_count", Stargazers_count);
+            request.AddParameter("Html_url", Html_url);
+            request.AddParameter("Description", Description);
+            request.AddParameter("Language", Language);
+            client.Authenticator = new HttpBasicAuthenticator("", "81fb8907e791f232977c6c3ba867e1d1cd8b2c09");
+            client.ExecuteAsync(request, response => {
+                Console.WriteLine(response.Content);
+            });
         }
         //1)
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
