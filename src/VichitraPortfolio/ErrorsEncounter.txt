@@ -1,2 +1,124 @@
 ﻿Error: object reference not set instance of object
 Solve: Close Vs & reopened and error's gone 
+
+
+
+Api call
+
+github3.search_code(query, sort=None, order=None, per_page=None, text_match=False, number=-1,
+etag=None)
+Find code via the code search API.
+Warning: You will only be able to make 5 calls with this or other search functions. To raise the rate-limit
+on this set of endpoints, create an authenticated GitHub Session with login.
+The query can contain any combination of the following supported qualifiers:
+•in Qualifies which fields are searched. With this qualifier you can restrict the search to just the file
+contents, the file path, or both.
+•language Searches code based on the language it’s written in.
+•fork Specifies that code from forked repositories should be searched. Repository forks will not be searchable
+unless the fork has more stars than the parent repository.
+2.1. API 21
+github3.py Documentation, Release 1.0.0a4
+•size Finds files that match a certain size (in bytes).
+•path Specifies the path that the resulting file must be at.
+•extension Matches files with a certain extension.
+•user or repo Limits searches to a specific user or repository.
+For more information about these qualifiers, see: http://git.io/-DvAuA
+Parameters
+• query (str) – (required), a valid query as described above, e.g., addClass in:file
+language:js repo:jquery/jquery
+• sort (str) – (optional), how the results should be sorted; option(s): indexed; default:
+best match
+• order (str) – (optional), the direction of the sorted results, options: asc, desc; default:
+desc
+• per_page (int) – (optional)
+• text_match (bool) – (optional), if True, return matching search terms. See
+http://git.io/4ct1eQ for more information
+• number (int) – (optional), number of repositories to return. Default: -1, returns all available
+repositories
+• etag (str) – (optional), previous ETag header value
+Returns generator of CodeSearchResult*******************************************************************************************.search_repositories(query, sort=None, order=None, per_page=None, text_match=False,
+number=-1, etag=None)
+Find repositories via various criteria.
+Warning: You will only be able to make 5 calls with this or other search functions. To raise the rate-limit
+on this set of endpoints, create an authenticated GitHub Session with login.
+The query can contain any combination of the following supported qualifers:
+•in Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository
+name, description, readme, or any combination of these.
+•size Finds repositories that match a certain size (in kilobytes).
+•forks Filters repositories based on the number of forks, and/or whether forked repositories should be
+included in the results at all.
+•created or pushed Filters repositories based on times of creation, or when they were last updated. Format:
+YYYY-MM-DD. Examples: created:<2011, pushed:<2013-02, pushed:>=2013-03-06
+•user or repo Limits searches to a specific user or repository.
+•language Searches repositories based on the language they’re written in.
+•stars Searches repositories based on the number of stars.
+For more information about these qualifiers, see: http://git.io/4Z8AkA
+Parameters
+• query (str) – (required), a valid query as described above, e.g., tetris
+language:assembly
+• sort (str) – (optional), how the results should be sorted; options: stars, forks,
+updated; default: best match
+2.1. API 23
+github3.py Documentation, Release 1.0.0a4
+• order (str) – (optional), the direction of the sorted results, options: asc, desc; default:
+desc
+• per_page (int) – (optional)
+• text_match (bool) – (optional), if True, return matching search terms. See
+http://git.io/4ct1eQ for more information
+• number (int) – (optional), number of repositories to return. Default: -1, returns all available
+repositories
+• etag (str) – (optional), previous ETag header value
+Returns generator of Reposit///////////////////////////////////////////////////////////////////GET /repositories/:repository_id/stargazers/repos/:owner/:repo/stargazersThis is in place now with the current media type for the API:
+///////
+application/vnd.github.beta+json
+////////
+If you care about your application not breaking, make sure all outgoing API requests pass that value for the "Accept" header. You should do this now. This can be verified by checking the X-GitHub-Media-Type header on all API responses.
+/////////////
+# Accesses a user's starred repositories. .... Is this will return all starred repositories?
+curl https://api.github.com/user/watched \
+ -H "Accept: application/vnd.github.beta+json"/////////////////////////////////////////////////////////////////////// Get stargazers *************************
++	 *
++	 * @throws IOException
++	 */
++	@Test
++	public void getStargazers() throws IOException {
++		service.getStargazers(repo);
++		GitHubRequest request = new GitHubRequest();
++		request.setUri(Utils.page("/repos/o/n/stargazers"));
++		verify(client).get(request);/////////////////////////////////////////////////////////////*************************************************************************************************Request Headers
+authorization: FILTERED
+content-type: application/json
+accept: application/vnd.github.v3+json
+user-agent: curl/7.37.1
+
+transfer-encoding: chunked
+x-served-by: bd82876e9bf04990f289ba22f246ee9b
+x-content-type-options: nosniff
+strict-transport-security: max-age=31536000; includeSubdomains; preload
+x-github-request-id: 68EC8CA8:5DB5:4BA22D2:5554E781
+access-control-allow-origin: *
+access-control-expose-headers: ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+access-control-allow-credentials: true
+content-security-policy: default-src 'none'
+x-frame-options: deny
+x-xss-protection: 1; mode=block
+x-github-media-type: github.v3; format=json
+x-accepted-oauth-scopes: notifications, repo
+x-oauth-scopes: admin:org, admin:public_key, delete_repo, gist, notifications, repo, user, write:repo_hook
+vary: Accept, Authorization, Cookie, X-GitHub-OTP
+x-poll-interval: 60
+etag: nil
+last-modified: Tue, 03 Mar 2015 21:09:55 GMT
+cache-control: private, max-age=60, s-maxage=60
+x-ratelimit-reset: 1431630723
+x-ratelimit-remaining: 4964
+x-ratelimit-limit: 5000
+status: 200 OK
+connection: close
+content-length: 5221
+content-type: application/json; charset=utf-8
+date: Thu, 14 May 2015 18:20:49 GMT
+server: GitHub.com
+      
+
+
