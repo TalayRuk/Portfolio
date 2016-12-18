@@ -60,7 +60,7 @@ namespace VichitraPortfolio.Models
             //Console.WriteLine(jsonResponse["items"]); **B/c items is the key where the data is stored, can't change it to somethingelse
             //Console.ReadLine();
         }
-        public void Send()
+        public void ShowRespositories()
         {
             var client = new RestClient("https://api.github.com/search/repositories?page=1&q=user:talayruk&sort=stars:>0&order=desc");
             var request = new RestRequest("", Method.POST);
