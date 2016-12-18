@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace VichitraPortfolio.Models
 {
-    public class Repository
+    public class Repo 
     {
         public string Name { get; set; }
         public string Stargazers_count { get; set; }
@@ -17,7 +17,7 @@ namespace VichitraPortfolio.Models
         public string Description { get; set; }
         public string Language { get; set; }
 
-        public static List<Repository> GetRepositories()
+        public static List<Repo> GetRepos()
         {
             //Make a connection with the server where the API is located 
             var client = new RestClient("https://api.github.com/search/repositories?page=1&q=user:talayruk&sort=stars:>0&order=desc");
@@ -29,7 +29,7 @@ namespace VichitraPortfolio.Models
             request.AddHeader("User-Agent", "talayruk");
             //To get metadata in search results, specify the text-match media type in Accept header
             request.AddHeader("Accept", "application/vnd.github.v3.text-match+json");
-            //Give the  client appropriate credentials & add /Itmes.json to the account string to get the response in JSON format **"items" is Json keys & its value is an array of JSON-formatted data about repositories
+            //Give the  client appropriate credentials & add /Itmes.json to the account string to get the response in JSON format **"items" is Json keys & its value is an array of JSON-formatted data about Repos
             client.Authenticator = new HttpBasicAuthenticator("/Itmes.json", "81fb8907e791f232977c6c3ba867e1d1cd8b2c09");
             //We initialize a new RestResponse variable named response
 
@@ -43,18 +43,18 @@ namespace VichitraPortfolio.Models
 
             //Console.WriteLine()) to process the request The response has content property
             //Trn the array stored as response.Content coverts the Json-formatted string response.Content into JObject (JObject comes from using NewtonSoft.Json.Linq library & is a .NET obj we can treat as JSON)
-            //JSON key is "items" we can pull this array out as a JSON object by deserializing it. DeserializeObject went into the data for each repository and found those keys to create item objects for us
-            //for this to work the property name has to match the JSON key. This means that the Name property for our Repository class needs to be named "Name"
+            //JSON key is "items" we can pull this array out as a JSON object by deserializing it. DeserializeObject went into the data for each repo and found those keys to create item objects for us
+            //for this to work the property name has to match the JSON key. This means that the Name property for our Repo class needs to be named "Name"
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
-            var repositoryList = JsonConvert.DeserializeObject<List<Repository>>(jsonResponse["items"].ToString());
-            return repositoryList;
-            //foreach (var repository in repositoryList)
+            var repoList = JsonConvert.DeserializeObject<List<Repo>>(jsonResponse["items"].ToString());
+            return repoList;
+            //foreach (var repo in repoList)
             //{
-            //    Console.WriteLine("Name: {0}", repository.Name);
-            //    Console.WriteLine("Stargazers_count: {0}", repository.Stargazers_count);
-            //    Console.WriteLine("Html_url: {0}", repository.Html_url);
-            //    Console.WriteLine("Description: {0}", repository.Description);
-            //    Console.WriteLine("Language: {0}", repository.Language);
+            //    Console.WriteLine("Name: {0}", repo.Name);
+            //    Console.WriteLine("Stargazers_count: {0}", repo.Stargazers_count);
+            //    Console.WriteLine("Html_url: {0}", repo.Html_url);
+            //    Console.WriteLine("Description: {0}", repo.Description);
+            //    Console.WriteLine("Language: {0}", repo.Language);
             //}
 
             //Console.WriteLine(jsonResponse["items"]); **B/c items is the key where the data is stored, can't change it to somethingelse

@@ -13,7 +13,10 @@ GET /repos/:owner/:repo/stargazers
 
 Api call
 
-*******************************************************************************************.search_repositories(query, sort=None, order=None, per_page=None, text_match=False,
+
+
+*******************************************************************************************
+.search_repositories(query, sort=None, order=None, per_page=None, text_match=False,
 number=-1, etag=None)
 Find repositories via various criteria.
 Warning: You will only be able to make 5 calls with this or other search functions. To raise the rate-limit
@@ -45,7 +48,11 @@ http://git.io/4ct1eQ for more information
 • number (int) – (optional), number of repositories to return. Default: -1, returns all available
 repositories
 • etag (str) – (optional), previous ETag header value
-Returns generator of Reposit///////////////////////////////////////////////////////////////////Json file{  
+Returns generator of Reposit
+///////////////////////////////////////////////////////////////////
+Json file
+
+{  
    "total_count":91,
    "incomplete_results":false,
    "items":[  
@@ -138,7 +145,13 @@ Returns generator of Reposit///////////////////////////////////////////////////
          "default_branch":"master",
          "score":1.0,
          "text_matches":[  ]
-      },///////////////////////////////////////////////////////////////////GET /repositories/:repository_id/stargazers/repos/:owner/:repo/stargazersThis is in place now with the current media type for the API:
+      },
+///////////////////////////////////////////////////////////////////
+
+GET /repositories/:repository_id/stargazers
+/repos/:owner/:repo/stargazers
+
+This is in place now with the current media type for the API:
 ///////
 application/vnd.github.beta+json
 ////////
@@ -146,7 +159,9 @@ If you care about your application not breaking, make sure all outgoing API requ
 /////////////
 # Accesses a user's starred repositories. .... Is this will return all starred repositories?
 curl https://api.github.com/user/watched \
- -H "Accept: application/vnd.github.beta+json"/////////////////////////////////////////////////////////////////////// Get stargazers *************************
+ -H "Accept: application/vnd.github.beta+json"
+///////////////////////////////////////////////////////////////////////
+ Get stargazers *************************
 +	 *
 +	 * @throws IOException
 +	 */
@@ -155,7 +170,10 @@ curl https://api.github.com/user/watched \
 +		service.getStargazers(repo);
 +		GitHubRequest request = new GitHubRequest();
 +		request.setUri(Utils.page("/repos/o/n/stargazers"));
-+		verify(client).get(request);/////////////////////////////////////////////////////////////*************************************************************************************************Request Headers
++		verify(client).get(request);
+/////////////////////////////////////////////////////////////
+*************************************************************************************************
+Request Headers
 authorization: FILTERED
 content-type: application/json
 accept: application/vnd.github.v3+json
