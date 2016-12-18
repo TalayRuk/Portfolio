@@ -8,9 +8,9 @@
         <li class="jumbotron">
             @*show only 3 repos*@
 
-            <h2>@Html.DisplayFor(modelItem => repo.Name)</h2>
+            <h2>@Html.DisplayFor(modelItem => repo.Name) &nbsp;<span class="glyphicon glyphicon-star"></span><small>@Html.DisplayFor(modelItem => repo.Stargazers_count)</small></h2>
             <h3>
-                <a href="#"> @Html.DisplayFor(modelItem => repo.Html_url) </a> <span class="glyphicon glyphicon-star"></span> : @Html.DisplayFor(modelItem => repo.Stargazers_count)
+                <a href="#"> @Html.DisplayFor(modelItem => repo.Html_url) </a> 
                 <br /><br />
                 Description: @Html.DisplayFor(modelItem => repo.Description)
                 <br />
