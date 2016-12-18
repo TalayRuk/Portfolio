@@ -1,0 +1,164 @@
+﻿Token: 81fb8907e791f232977c6c3ba867e1d1cd8b2c09
+
+
+GET /repositories/:repository_id/stargazers?
+
+In order to access the API with your Integration, you must provide a custom media type in the Accept Header for your requests.
+******application/vnd.github.v3+json
+To access Integrations, you must first sign the pre-release agreement.
+If you'd like to get started, check out our developer documentation.
+******application/vnd.github.machine-man-preview+json
+
+GET /repos/:owner/:repo/stargazers
+
+Api call
+
+*******************************************************************************************.search_repositories(query, sort=None, order=None, per_page=None, text_match=False,
+number=-1, etag=None)
+Find repositories via various criteria.
+Warning: You will only be able to make 5 calls with this or other search functions. To raise the rate-limit
+on this set of endpoints, create an authenticated GitHub Session with login.
+The query can contain any combination of the following supported qualifers:
+•in Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository
+name, description, readme, or any combination of these.
+•size Finds repositories that match a certain size (in kilobytes).
+•forks Filters repositories based on the number of forks, and/or whether forked repositories should be
+included in the results at all.
+•created or pushed Filters repositories based on times of creation, or when they were last updated. Format:
+YYYY-MM-DD. Examples: created:<2011, pushed:<2013-02, pushed:>=2013-03-06
+•user or repo Limits searches to a specific user or repository.
+•language Searches repositories based on the language they’re written in.
+•stars Searches repositories based on the number of stars.
+For more information about these qualifiers, see: http://git.io/4Z8AkA
+Parameters
+• query (str) – (required), a valid query as described above, e.g., tetris
+language:assembly
+• sort (str) – (optional), how the results should be sorted; options: stars, forks,
+updated; default: best match
+2.1. API 23
+github3.py Documentation, Release 1.0.0a4
+• order (str) – (optional), the direction of the sorted results, options: asc, desc; default:
+desc
+• per_page (int) – (optional)
+• text_match (bool) – (optional), if True, return matching search terms. See
+http://git.io/4ct1eQ for more information
+• number (int) – (optional), number of repositories to return. Default: -1, returns all available
+repositories
+• etag (str) – (optional), previous ETag header value
+Returns generator of Reposit///////////////////////////////////////////////////////////////////Json file{  
+   "total_count":91,
+   "incomplete_results":false,
+   "items":[  
+      {  
+         "id":76307547,
+         "name":"TwilioTest",
+         "full_name":"TalayRuk/TwilioTest",
+         "owner":{  
+            "login":"TalayRuk",
+            "id":19232053,
+            "avatar_url":"https://avatars.githubusercontent.com/u/19232053?v=3",
+            "gravatar_id":"",
+            "url":"https://api.github.com/users/TalayRuk",
+            "html_url":"https://github.com/TalayRuk",
+            "followers_url":"https://api.github.com/users/TalayRuk/followers",
+            "following_url":"https://api.github.com/users/TalayRuk/following{/other_user}",
+            "gists_url":"https://api.github.com/users/TalayRuk/gists{/gist_id}",
+            "starred_url":"https://api.github.com/users/TalayRuk/starred{/owner}{/repo}",
+            "subscriptions_url":"https://api.github.com/users/TalayRuk/subscriptions",
+            "organizations_url":"https://api.github.com/users/TalayRuk/orgs",
+            "repos_url":"https://api.github.com/users/TalayRuk/repos",
+            "events_url":"https://api.github.com/users/TalayRuk/events{/privacy}",
+            "received_events_url":"https://api.github.com/users/TalayRuk/received_events",
+            "type":"User",
+            "site_admin":false
+         },
+         "private":false,
+         "html_url":"https://github.com/TalayRuk/TwilioTest",
+         "description":"wk4 Apis w/RestSharp & Twilio",
+         "fork":false,
+         "url":"https://api.github.com/repos/TalayRuk/TwilioTest",
+         "forks_url":"https://api.github.com/repos/TalayRuk/TwilioTest/forks",
+         "keys_url":"https://api.github.com/repos/TalayRuk/TwilioTest/keys{/key_id}",
+         "collaborators_url":"https://api.github.com/repos/TalayRuk/TwilioTest/collaborators{/collaborator}",
+         "teams_url":"https://api.github.com/repos/TalayRuk/TwilioTest/teams",
+         "hooks_url":"https://api.github.com/repos/TalayRuk/TwilioTest/hooks",
+         "issue_events_url":"https://api.github.com/repos/TalayRuk/TwilioTest/issues/events{/number}",
+         "events_url":"https://api.github.com/repos/TalayRuk/TwilioTest/events",
+         "assignees_url":"https://api.github.com/repos/TalayRuk/TwilioTest/assignees{/user}",
+         "branches_url":"https://api.github.com/repos/TalayRuk/TwilioTest/branches{/branch}",
+         "tags_url":"https://api.github.com/repos/TalayRuk/TwilioTest/tags",
+         "blobs_url":"https://api.github.com/repos/TalayRuk/TwilioTest/git/blobs{/sha}",
+         "git_tags_url":"https://api.github.com/repos/TalayRuk/TwilioTest/git/tags{/sha}",
+         "git_refs_url":"https://api.github.com/repos/TalayRuk/TwilioTest/git/refs{/sha}",
+         "trees_url":"https://api.github.com/repos/TalayRuk/TwilioTest/git/trees{/sha}",
+         "statuses_url":"https://api.github.com/repos/TalayRuk/TwilioTest/statuses/{sha}",
+         "languages_url":"https://api.github.com/repos/TalayRuk/TwilioTest/languages",
+         "stargazers_url":"https://api.github.com/repos/TalayRuk/TwilioTest/stargazers",
+         "contributors_url":"https://api.github.com/repos/TalayRuk/TwilioTest/contributors",
+         "subscribers_url":"https://api.github.com/repos/TalayRuk/TwilioTest/subscribers",
+         "subscription_url":"https://api.github.com/repos/TalayRuk/TwilioTest/subscription",
+         "commits_url":"https://api.github.com/repos/TalayRuk/TwilioTest/commits{/sha}",
+         "git_commits_url":"https://api.github.com/repos/TalayRuk/TwilioTest/git/commits{/sha}",
+         "comments_url":"https://api.github.com/repos/TalayRuk/TwilioTest/comments{/number}",
+         "issue_comment_url":"https://api.github.com/repos/TalayRuk/TwilioTest/issues/comments{/number}",
+         "contents_url":"https://api.github.com/repos/TalayRuk/TwilioTest/contents/{+path}",
+         "compare_url":"https://api.github.com/repos/TalayRuk/TwilioTest/compare/{base}...{head}",
+         "merges_url":"https://api.github.com/repos/TalayRuk/TwilioTest/merges",
+         "archive_url":"https://api.github.com/repos/TalayRuk/TwilioTest/{archive_format}{/ref}",
+         "downloads_url":"https://api.github.com/repos/TalayRuk/TwilioTest/downloads",
+         "issues_url":"https://api.github.com/repos/TalayRuk/TwilioTest/issues{/number}",
+         "pulls_url":"https://api.github.com/repos/TalayRuk/TwilioTest/pulls{/number}",
+         "milestones_url":"https://api.github.com/repos/TalayRuk/TwilioTest/milestones{/number}",
+         "notifications_url":"https://api.github.com/repos/TalayRuk/TwilioTest/notifications{?since,all,participating}",
+         "labels_url":"https://api.github.com/repos/TalayRuk/TwilioTest/labels{/name}",
+         "releases_url":"https://api.github.com/repos/TalayRuk/TwilioTest/releases{/id}",
+         "deployments_url":"https://api.github.com/repos/TalayRuk/TwilioTest/deployments",
+         "created_at":"2016-12-13T00:28:06Z",
+         "updated_at":"2016-12-17T02:43:58Z",
+         "pushed_at":"2016-12-13T00:32:06Z",
+         "git_url":"git://github.com/TalayRuk/TwilioTest.git",
+         "ssh_url":"git@github.com:TalayRuk/TwilioTest.git",
+         "clone_url":"https://github.com/TalayRuk/TwilioTest.git",
+         "svn_url":"https://github.com/TalayRuk/TwilioTest",
+         "homepage":null,
+         "size":92,
+         "stargazers_count":2,
+         "watchers_count":2,
+         "language":"C#",
+         "has_issues":true,
+         "has_downloads":true,
+         "has_wiki":true,
+         "has_pages":false,
+         "forks_count":0,
+         "mirror_url":null,
+         "open_issues_count":0,
+         "forks":0,
+         "open_issues":0,
+         "watchers":2,
+         "default_branch":"master",
+         "score":1.0,
+         "text_matches":[  ]
+      },///////////////////////////////////////////////////////////////////GET /repositories/:repository_id/stargazers/repos/:owner/:repo/stargazersThis is in place now with the current media type for the API:
+///////
+application/vnd.github.beta+json
+////////
+If you care about your application not breaking, make sure all outgoing API requests pass that value for the "Accept" header. You should do this now. This can be verified by checking the X-GitHub-Media-Type header on all API responses.
+/////////////
+# Accesses a user's starred repositories. .... Is this will return all starred repositories?
+curl https://api.github.com/user/watched \
+ -H "Accept: application/vnd.github.beta+json"/////////////////////////////////////////////////////////////////////// Get stargazers *************************
++	 *
++	 * @throws IOException
++	 */
++	@Test
++	public void getStargazers() throws IOException {
++		service.getStargazers(repo);
++		GitHubRequest request = new GitHubRequest();
++		request.setUri(Utils.page("/repos/o/n/stargazers"));
++		verify(client).get(request);/////////////////////////////////////////////////////////////*************************************************************************************************Request Headers
+authorization: FILTERED
+content-type: application/json
+accept: application/vnd.github.v3+json
+user-agent: curl/7.37.1
+
+
