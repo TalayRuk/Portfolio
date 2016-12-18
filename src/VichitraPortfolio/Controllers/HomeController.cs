@@ -19,8 +19,8 @@ namespace VichitraPortfolio.HomeController.cs
 
         public IActionResult GetRepos()
         {
-            var allRepos = Repo.GetRepos();
-            return View(allRepos);
+            var repoList = Repo.GetRepos();
+            return View(repoList);
         }
 
     }

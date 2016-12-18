@@ -48,33 +48,13 @@ namespace VichitraPortfolio.Models
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
             var repoList = JsonConvert.DeserializeObject<List<Repo>>(jsonResponse["items"].ToString());
             return repoList;
-            //foreach (var repo in repoList)
-            //{
-            //    Console.WriteLine("Name: {0}", repo.Name);
-            //    Console.WriteLine("Stargazers_count: {0}", repo.Stargazers_count);
-            //    Console.WriteLine("Html_url: {0}", repo.Html_url);
-            //    Console.WriteLine("Description: {0}", repo.Description);
-            //    Console.WriteLine("Language: {0}", repo.Language);
-            //}
+  
 
             //Console.WriteLine(jsonResponse["items"]); **B/c items is the key where the data is stored, can't change it to somethingelse
             //Console.ReadLine();
         }
         //GetRepos should show all the repositories, don't need another showrepositories unlike sending message we have to have another form to send the message but since we will not be sending these repos anywhere !
-        //public void ShowRespositories()
-        //{
-        //    var client = new RestClient("https://api.github.com/search/repositories?page=1&q=user:talayruk&sort=stars:>0&order=desc");
-        //    var request = new RestRequest("", Method.POST);
-        //    request.AddParameter("Name", Name);
-        //    request.AddParameter("Stargazers_count", Stargazers_count);
-        //    request.AddParameter("Html_url", Html_url);
-        //    request.AddParameter("Description", Description);
-        //    request.AddParameter("Language", Language);
-        //    client.Authenticator = new HttpBasicAuthenticator("", "81fb8907e791f232977c6c3ba867e1d1cd8b2c09");
-        //    client.ExecuteAsync(request, response => {
-        //        Console.WriteLine(response.Content);
-        //    });
-        //}
+        
         //1)
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
         {
