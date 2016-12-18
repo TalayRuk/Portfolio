@@ -13,7 +13,7 @@ namespace VichitraPortfolio
 {
     public class Startup
     {
-        //public IConfigurationRoot Configuration { get; set; }
+        public IConfigurationRoot Configuration { get; set; }
         //public Startup(IHostingEnvironment env)
         //{
         //    var builder = new ConfigurationBuilder()
