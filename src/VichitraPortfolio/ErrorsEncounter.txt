@@ -10,3 +10,5 @@ App was working fine but After merge from note branch to master got error & brok
    at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionFilterAsync>d__28.MoveNext()}
 
 -Solve: Access Token was expire: Regenerate new token & it works now :<
+
+****Need to REMEMBER When COMMIT, PUSH & MERGE MAKE SURE IIS EXPRESS ISN'T RUNNING ***

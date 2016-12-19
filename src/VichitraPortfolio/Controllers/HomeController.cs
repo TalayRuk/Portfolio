@@ -20,6 +20,9 @@ namespace VichitraPortfolio.HomeController.cs
         public IActionResult GetRepos()
         {
             var repoList = Repo.GetRepos();
+            int rList = repoList.Count();
+            Console.WriteLine(rList);
+
             return View(repoList);
         }
 
