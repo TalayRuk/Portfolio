@@ -20,7 +20,7 @@ namespace VichitraPortfolio.Models
         public static List<Repo> GetRepos()
         {
             //Make a connection with the server where the API is located 
-            var client = new RestClient("https://api.github.com/search/repositories?page=1&q=user:talayruk&sort=stars:>0&order=desc");
+            var client = new RestClient("https://api.github.com/search/repositories?page=1&q=user:talayruk&sort=stars:>=1&order=desc");
             //Create the request, and add the physical path to the specific API controller an choose the HTTP method 
             //Can't add /Itmes.json to the account since there's no account just leave it empty string in order to get the json 
             var request = new RestRequest("", Method.GET);

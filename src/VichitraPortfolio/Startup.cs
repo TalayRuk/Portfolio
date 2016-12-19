@@ -14,13 +14,13 @@ namespace VichitraPortfolio
     public class Startup
     {
         public IConfigurationRoot Configuration { get; set; }
-        public Startup(IHostingEnvironment env)
-        {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsetting.json");
-            Configuration = builder.Build();
-        }
+        //public Startup(IHostingEnvironment env)
+        //{
+        //    var builder = new ConfigurationBuilder()
+        //        .SetBasePath(env.ContentRootPath)
+        //        .AddJsonFile("appsetting.json");
+        //    Configuration = builder.Build();
+        //}
 
         public void ConfigureServices(IServiceCollection services)
         {

@@ -1,13 +1,12 @@
-﻿Error: object reference not set instance of object
+﻿1.Error: object reference not set instance of object
 Solve: Close Vs & reopened and error's gone 
 
 App was working fine but After merge from note branch to master got error & broke
-Error:
+2.Error:
 {System.NullReferenceException: Object reference not set to an instance of an object.
    at VichitraPortfolio.Models.Repo.GetRepos() in C:\Users\epicodus\Desktop\VichitraPortfolio\src\VichitraPortfolio\Models\Repo.cs:line 49
    at VichitraPortfolio.HomeController.cs.HomeController.GetRepos() in C:\Users\epicodus\Desktop\VichitraPortfolio\src\VichitraPortfolio\Controllers\HomeController.cs:line 22
    at lambda_method(Closure , Object , Object[] )
    at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionFilterAsync>d__28.MoveNext()}
 
-
-   ***Check to add migrations & c if it'll works!
+-Solve: Access Token was expire: Regenerate new token & it works now :<
