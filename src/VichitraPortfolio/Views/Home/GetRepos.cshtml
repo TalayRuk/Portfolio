@@ -5,22 +5,23 @@
 <ol>
     @foreach (var repo in Model)
     {
-        @for (int i = 0; i < 4; i++)
-        {
-            <li class="jumbotron">
-            
+        <li class="jumbotron">
+            @Sfor(int i = 0; i < 4; i++) 
+            {
                 <h2>@Html.DisplayFor(modelItem => repo.Name) &nbsp;<span class="glyphicon glyphicon-star"></span><small>@Html.DisplayFor(modelItem => repo.Stargazers_count)</small></h2>
-                <h3>
-                    <a href="#"> @Html.DisplayFor(modelItem => repo.Html_url) </a>
-                    <br /><br />
-                    Description: @Html.DisplayFor(modelItem => repo.Description)
-                    <br />
-                    Language: @Html.DisplayFor(modelItem => repo.Language)
+            <h3>
+                <a href="#"> @Html.DisplayFor(modelItem => repo.Html_url) </a>
+                <br /><br />
+                Description: @Html.DisplayFor(modelItem => repo.Description)
+                <br />
+                Language: @Html.DisplayFor(modelItem => repo.Language)
 
-                </h3>
+            </h3>
+            }
 
-            </li>
-        }
+            
+
+        </li>
     }
 </ol>
 
