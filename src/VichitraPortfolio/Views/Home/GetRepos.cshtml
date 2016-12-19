@@ -1,12 +1,14 @@
 ﻿@model IEnumerable<VichitraPortfolio.Models.Repo>
 
-<h2>Projects with Stars from my Talayruk Github</h2>
-<hr />
+<br /><br /><br /><br /><br />
+
+<h2 class="project">Projects with Stars from my Github/Talayruk</h2>
+
     
     @*using Enumerable.Take<> Returns a specified number of contiguous elements from the start of a sequence.
          More info: https://msdn.microsoft.com/en-us/library/bb503062.aspx*@
 
-    <ol>
+    <ul>
         @foreach (var repo in Model.Take(3))
         {
             <li class="jumbotron">
@@ -23,7 +25,7 @@
   
             </li>
         }
-    </ol>
+    </ul>
 
 @Html.ActionLink("Back home", "Index")
 

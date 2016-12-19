@@ -1,7 +1,8 @@
 ﻿1.Error: object reference not set instance of object
-Solve: Close Vs & reopened and error's gone 
+Solve: *Close Vs & reopened and error's gone 
 
 App was working fine but After merge from note branch to master got error & broke
+
 2.Error:
 {System.NullReferenceException: Object reference not set to an instance of an object.
    at VichitraPortfolio.Models.Repo.GetRepos() in C:\Users\epicodus\Desktop\VichitraPortfolio\src\VichitraPortfolio\Models\Repo.cs:line 49
@@ -9,6 +10,11 @@ App was working fine but After merge from note branch to master got error & brok
    at lambda_method(Closure , Object , Object[] )
    at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionFilterAsync>d__28.MoveNext()}
 
--Solve: Access Token was expire: Regenerate new token & it works now :<
+-Solve: *Access Token was expire: Regenerate new token & it works now :<
 
 ****Need to REMEMBER When COMMIT, PUSH & MERGE MAKE SURE IIS EXPRESS ISN'T RUNNING ***
+
+3.Error: 
+	Merge Conflict when trying to merge btwn branch 
+
+-Solve: *Use git mergetool to help resolve conflict
