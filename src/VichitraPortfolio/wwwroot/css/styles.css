@@ -1,5 +1,5 @@
 ﻿body {
-  font-family:calibri;
+  font-family: calibri;
   background-image: url(http://www.dvd-ppt-slideshow.com/images/ppt-background/background-15.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -9,7 +9,7 @@
 .c-1 {
   margin: 10px 0 10px 0;
   padding-top: 1px;
-  padding-bottom:5%;
+  padding-bottom: 5%;
   padding-left: 10px;
   padding-right: 10px;
   background-color: #D1EEEE	;
@@ -17,8 +17,9 @@
   text-align:left;
 }
 .c-1 img {
-  float:right;
-  width:20%;
+  padding-top: 15px;
+  float: right;
+  width: 40%;
 }
 .project {
   text-align: center;
