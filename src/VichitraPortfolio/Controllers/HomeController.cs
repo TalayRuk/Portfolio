@@ -17,12 +17,14 @@ namespace VichitraPortfolio.HomeController.cs
             return View();
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
         public IActionResult GetRepos()
         {
             var repoList = Repo.GetRepos();
-            int rList = repoList.Count();
-            Console.WriteLine(rList);
-
             return View(repoList);
         }
 
