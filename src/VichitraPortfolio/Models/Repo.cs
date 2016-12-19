@@ -25,12 +25,12 @@ namespace VichitraPortfolio.Models
             //Can't add /Itmes.json to the account since there's no account just leave it empty string in order to get the json 
             var request = new RestRequest("", Method.GET);
             //Add parameters to our request. We have to set repository
-            request.AddParameter("Access_token", EnvironmentVariables.AuthToken);
+            request.AddParameter("Access_token", EnvironmentVariables.AccessToken);
             request.AddHeader("User-Agent", "talayruk");
             //To get metadata in search results, specify the text-match media type in Accept header
             request.AddHeader("Accept", "application/vnd.github.v3.text-match+json");
             //Give the  client appropriate credentials & add /Itmes.json to the account string to get the response in JSON format **"items" is Json keys & its value is an array of JSON-formatted data about Repos
-            client.Authenticator = new HttpBasicAuthenticator("/Itmes.json", EnvironmentVariables.AuthToken);
+            client.Authenticator = new HttpBasicAuthenticator("/Itmes.json", EnvironmentVariables.AccessToken);
             //We initialize a new RestResponse variable named response
 
             var response = new RestResponse();
