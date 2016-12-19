@@ -18,33 +18,23 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar">Home</span>
+                    <span class="icon-bar">Porfolio</span>
+                    <span class="icon-bar">About</span>
                 </button>
-                <a class="navbar-brand" href="/">Mr. Fix-It</a>
+                <a class="navbar-brand" href="/">Vichitra Portfolio</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        @Html.ActionLink("About", "Index", "About")
+                        @Html.ActionLink("Home", "Index")
                     </li>
                     <li>
-                        @Html.ActionLink("Hire Us", "Index", "Jobs")
+                        @Html.ActionLink("Portfolio", "GetRepos")
                     </li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>
-                            @Html.ActionLink("Worker Dashboard", "Index", "Workers")
-                        </li>
-                    }
-
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li>
-                            @Html.ActionLink("Log Out", "LogOff", "Account")
-                        </li>
-                    }
+                    <li>
+                        @Html.ActionLink("About", "About")
+                    </li>
 
                 </ul>
             </div>
