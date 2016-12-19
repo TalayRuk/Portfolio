@@ -16,26 +16,12 @@
   height: auto;
   text-align:left;
 }
-.c-1 #sunset img {
+.c-1 img {
   float:right;
   width:20%;
 }
-
-.c-2 {
-  margin: 10px 0 10px 0;
-  padding-top: 1px;
-  padding-bottom:5%;
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: #E0EEEE	;
-  height: auto;
-  text-align:left;
-  /*width: 80%;*/
-  height:auto;
-}
-.c-2 img {
-  float:right;
-  width: 20%;
+.project {
+  text-align: center;
 }
 
 .jumbotron {
